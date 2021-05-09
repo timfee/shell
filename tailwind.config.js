@@ -1,18 +1,18 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
 module.exports = {
+  mode: 'jit',
   future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
+    purgeLayersByDefault: true,
+    applyComplexClasses: true
   },
-  purge: ['./components/**/*.{js,ts,jsx,tsx}', './pages/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
-      }
-    }
+  purge: {
+    content: [
+      `./pages/**/*.{js,ts,jsx,tsx}`,
+      `./components/**/*.{js,ts,jsx,tsx}`,
+      `./layouts/**/*.{js,ts,jsx,tsx}`,
+    ]
   },
-  variants: {},
-  plugins: [require('@tailwindcss/ui')]
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography')
+  ]
 }

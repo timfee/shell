@@ -1,20 +1,23 @@
-import { cache } from '@emotion/css'
-import { CacheProvider, css, Global } from '@emotion/react'
 import { AppProps } from 'next/app'
-import '../styles/global.css'
-import tw from '@tailwindcssinjs/macro'
+import { FC } from 'react'
+import 'tailwindcss/tailwind.css'
+import Link from 'next/link'
+const App = ({ Component, pageProps }: AppProps<{ layout?: FC }>) => {
+  const Layout: FC =
+    Component.defaultProps?.layout || (({ children }) => <>{children}</>)
 
-function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <CacheProvider value={cache}>
-      <Global
-        styles={css`
-          ${tw`font-sans subpixel-antialiased`}
-        `}
-      />
+    <Layout>
       <Component {...pageProps} />
-    </CacheProvider>
+      <div>
+        <Link href="/index">Green (Good)</Link>•<a href="/index">Green (Bad)</a>
+      </div>
+      <div>
+        <Link href="/purple">Purple (Good)</Link>•
+        <a href="/purple">Purple (Bad)</a>
+      </div>
+    </Layout>
   )
 }
 
-export default MyApp
+export default App

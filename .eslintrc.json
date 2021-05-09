@@ -5,11 +5,12 @@
         "node": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "standard",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:react-hooks/recommended",
+        "prettier",
         "prettier/@typescript-eslint",
-        "prettier/standard",
         "prettier/react"
     ],
     "parser": "@typescript-eslint/parser",
@@ -24,7 +25,6 @@
         "react",
         "@typescript-eslint",
         "prettier",
-        "emotion"
     ],
     "rules": {
         "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -32,7 +32,6 @@
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/indent": "off",
         "@typescript-eslint/member-delimiter-style": "off",
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/no-unused-vars": [
@@ -53,7 +52,6 @@
         "camelcase": "off",
         "no-use-before-define": "off",
         "prettier/prettier": "error",
-        "react/display-name": "off",
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off",
         "space-before-function-paren": "off"

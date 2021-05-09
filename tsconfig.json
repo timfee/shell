@@ -1,36 +1,61 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "baseUrl": ".",
+    "target": "esnext",
     "lib": [
       "dom",
-      "es2017"
+      "dom.iterable",
+      "esnext"
     ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@/pages/*": [
+        "pages/*"
+      ],
+      "@/apis/*": [
+        "pages/api/*"
+      ],
+      "@/types/*": [
+        "types/*"
+      ],
+      "@/lib/*": [
+        "lib/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ],
+      "@/assets/*": [
+        "assets/*"
+      ],
+      "@/contexts/*": [
+        "contexts/*"
+      ],
+      "@/layouts/*": [
+        "layouts/*"
+      ],
+      "@/components/*": [
+        "components/*"
+      ]
+    }
   },
+  "include": [
+    "next-env.d.ts",
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js"
+  ],
   "exclude": [
     "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "plugins": [
-    {
-      "name": "typescript-tailwindcssinjs-plugin"
-    }
   ]
 }

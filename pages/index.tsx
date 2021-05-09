@@ -1,18 +1,10 @@
-import Link from 'next/link'
+import DefaultLayout from '@/layouts/DefaultLayout'
+import { NextPageWithLayout } from '@/types/LayoutPage'
 
-/** @jsx jsx */
-import { jsx } from '@emotion/react'
-import tw from '@tailwindcssinjs/macro'
+const IndexPage: NextPageWithLayout = () => <>Hello, mom!</>
 
-const IndexPage = () => (
-  <>
-    <h1 css={tw`text-2xl font-bold`}>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a css={tw`text-blue-600`}>About</a>
-      </Link>
-    </p>
-  </>
-)
+IndexPage.defaultProps = {
+  layout: DefaultLayout
+}
 
 export default IndexPage
